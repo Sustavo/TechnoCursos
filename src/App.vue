@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <TheHeader />
-    <router-view />
+    <router-view class="container" />
   </div>
 </template>
 
@@ -36,5 +36,36 @@ export default {
 
   a.router-link-exact-active {
     color: #4B8;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .v-enter {
+    opacity: 0;
+    transform: translate3d(-20px, 0, 0);
+  }
+
+  .v-enter-active {
+    transition: all .3s;
+  }
+
+  .conteudo {
+    display: grid;
+    grid-template-columns: 1fr minmax(200px, 400px);
+    grid-gap: 30px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .conteudo {
+      display: block;
+    }
   }
 </style>
